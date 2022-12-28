@@ -46,7 +46,7 @@ const getMovies = async () => {
     })
     window.location.reload()
 }
-if(storeTitle.length != 0){
+if(storeTitle){
     for(let i = 0; i < storeTitle.length; i++){
         MovieDiv.innerHTML += `<div class="movieBlock"><span class="span"><h2 class="title">${storeTitle[i]}</h2></span><img class="img" src=${storeImg[i]}/></div>`
     }
