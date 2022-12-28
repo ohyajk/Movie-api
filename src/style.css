@@ -1,0 +1,177 @@
+:root {
+  --amber: #e6871c;
+  --bg: rgb(45, 45, 45);
+}
+
+body {
+  background-color: var(--bg);
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,ul,li,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 4vw;
+  position: relative;
+  background-color: var(--amber);
+  background-image: url(http://frontend.lostboys.nl/presenations/Icons-fonts/img/chrome.png);
+  overflow: hidden;
+  box-shadow: 2px 2px 4px #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.51);
+}
+nav:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 0) 10%,
+    rgb(255, 170, 73) 30%,
+    rgba(250, 250, 250, 0) 40%
+  );
+  -webkit-animation: animation 5s ease-in-out infinite;
+}
+@-webkit-keyframes animation {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.logo {
+  font-size: 32px;
+  font-family: fantasy;
+  text-shadow: 2px 2px 4px #000;
+  z-index: 1;
+}
+
+.links {
+  display: flex;
+  gap: 1vw;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.651);
+  font-weight: 600;
+  z-index: 1;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  gap: 10px;
+}
+
+#form input {
+  width: 30%;
+  padding: 10px 10px;
+  font-size: 20px;
+  border-radius: 1000px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+#form button {
+  padding: 10px 10px;
+  font-size: 20px;
+  border-radius: 1000px;
+  border: none;
+  background-color: var(--amber);
+  color: white;
+}
+
+#form button:hover {
+  cursor: pointer;
+}
+
+.movieBlock {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.span:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.705);
+  opacity: 100;
+}
+
+.title {
+  background-color: #000;
+  border-radius: 10000px;
+  padding: 10px 20px ;
+}
+
+#Movies {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+}
+
+@media only screen and (max-width: 1080px) {
+  #Movies {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  #form {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #form input {
+    width: 80%;
+  }
+
+  #form button {
+    width: 80%;
+  }
+  
+  #Movies {
+    grid-template-columns: repeat(2, 50%);
+    padding: 0 2%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  #Movies {
+    grid-template-columns: repeat(1, 100%);
+    padding: 0 5%;
+  }
+}
